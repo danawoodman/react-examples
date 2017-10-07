@@ -1,0 +1,14 @@
+{
+  "plugins": ["react-html-attrs"],
+  "presets": [
+    "react",
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": ["> 5%"]
+        }
+      }
+    ]
+  ]
+}
