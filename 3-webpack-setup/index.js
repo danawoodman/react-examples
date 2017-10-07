@@ -1,9 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
-const SomeComponent = ({ message = 'whatsupp' }) => <span>{message}</span>
+import Greeting from './greeting'
 
 ReactDOM.render(
-  <SomeComponent message='Hello World' />,
+  <Greeting message="Hello World" />,
   document.getElementById('root')
 )

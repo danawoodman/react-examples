@@ -1,25 +1,27 @@
-function Link({ action }) {
-  return (
-    <a
-      href=''
-      onClick={(e) => {
-        e.preventDefault()
-        action(e.target.textContent)
-      }}
-    >
-      Click me!
-    </a>
-  )
+function Button({ increment }) {
+  return <button onClick={increment}>Math!</button>
 }
 
-function Application() {
-  const doStuff = (text) => alert(text)
-  return (
-    <Link action={doStuff} />
-  )
+class Application extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      total: 0,
+    }
+  }
+
+  increment() {
+    this.setState({ total: ++this.state.total })
+  }
+
+  render() {
+    return (
+      <div>
+        <Button increment={() => this.increment()} />
+        <h1>{this.state.total}</h1>
+      </div>
+    )
+  }
 }
 
-ReactDOM.render(
-  <Application />,
-  document.getElementById('root')
-)
+ReactDOM.render(<Application />, document.getElementById('root'))

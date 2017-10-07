@@ -1,22 +1,16 @@
-function Item({ title }) {
-  return (
-    <li>{title}</li>
-  )
+function Item({ item }) {
+  return <li>{item.title}</li>
 }
 
-function List({ items }) {
-  return (
-    <ul>
-      {items.map((item) => <Item title={item.title} />)}
-    </ul>
-  )
+function List({ addItem, items }) {
+  return <ul>{items.map((item, key) => <Item key={key} item={item} />)}</ul>
 }
 
 const items = [
-  { title: 'Node.js' },
   { title: 'React' },
-  { title: 'Golang' },
-  { title: 'Ruby on Rails' },
+  { title: 'WebPack' },
+  { title: 'Babel' },
+  { title: 'Redux' },
 ]
 
 ReactDOM.render(<List items={items} />, document.getElementById('root'))
